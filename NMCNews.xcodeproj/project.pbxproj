@@ -13,6 +13,8 @@
 		2FF5C4CD25625B7B00590523 /* NMCNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FF5C4CB25625B7B00590523 /* NMCNews.xcdatamodeld */; };
 		2FF5C4CF25625B7C00590523 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FF5C4CE25625B7C00590523 /* Assets.xcassets */; };
 		2FF5C4D225625B7C00590523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FF5C4D025625B7C00590523 /* LaunchScreen.storyboard */; };
+		C369DD3B25638ED700CEF5A2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369DD3A25638ED700CEF5A2 /* SignUpViewController.swift */; };
+		C369DD3D25638F0C00CEF5A2 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369DD3C25638F0C00CEF5A2 /* HomepageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		2FF5C4CE25625B7C00590523 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FF5C4D125625B7C00590523 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FF5C4D325625B7C00590523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C369DD3A25638ED700CEF5A2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		C369DD3C25638F0C00CEF5A2 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				2FF5C4D025625B7C00590523 /* LaunchScreen.storyboard */,
 				2FF5C4D325625B7C00590523 /* Info.plist */,
 				2FF5C4CB25625B7B00590523 /* NMCNews.xcdatamodeld */,
+				C369DD3A25638ED700CEF5A2 /* SignUpViewController.swift */,
+				C369DD3C25638F0C00CEF5A2 /* HomepageViewController.swift */,
 			);
 			path = NMCNews;
 			sourceTree = "<group>";
@@ -140,7 +146,9 @@
 			files = (
 				2FF5C4CD25625B7B00590523 /* NMCNews.xcdatamodeld in Sources */,
 				2FF5C4C725625B7B00590523 /* ViewController.swift in Sources */,
+				C369DD3B25638ED700CEF5A2 /* SignUpViewController.swift in Sources */,
 				2FF5C4C525625B7B00590523 /* AppDelegate.swift in Sources */,
+				C369DD3D25638F0C00CEF5A2 /* HomepageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
