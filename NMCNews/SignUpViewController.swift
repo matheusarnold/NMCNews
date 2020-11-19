@@ -73,7 +73,7 @@ class SignUpViewController: UIViewController {
         }
         
         else if !((email?.hasSuffix(".com"))!){
-            //email must be ended with .com
+            //email must be ended with .comm
             emailDotcom.addAction(OKAY)
             present(emailDotcom, animated: true, completion: nil)
         }
