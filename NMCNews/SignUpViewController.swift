@@ -37,6 +37,9 @@ class SignUpViewController: UIViewController {
     
     
     
+    //validasi email dibenerin lagi ya:
+    //1. contains @
+    //2. can't have @.
     
     let name_less3 = UIAlertController(title: "Alert", message: "Name must be more than 3 characters", preferredStyle: .alert)
     
@@ -71,7 +74,7 @@ class SignUpViewController: UIViewController {
             name_less3.addAction(OKAY)
             present(name_less3, animated: true, completion: nil)
         }
-        
+            
         else if !((email?.hasSuffix(".com"))!){
             //email must be ended with .comm
             emailDotcom.addAction(OKAY)
