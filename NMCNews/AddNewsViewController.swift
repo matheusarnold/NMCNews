@@ -8,14 +8,25 @@
 
 import UIKit
 
-class AddNewsViewController: UIViewController {
+class AddNewsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    var arrCategory = ["Entertainment", "Politic", "Sport", "Finance", "Automotive"]
+    
+    @IBOutlet weak var pickerCategory: UIPickerView!
     @IBAction func btnBack(_ sender: Any) {
         alertMe(message: "Save to draft before leaving?")
+    }
+    
+    @IBAction func btnSelectCategory(_ sender: UIButton) {
+        pickerCategory.isHidden = false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        pickerCategory.isHidden = true
+        pickerCategory.dataSource = self
+        pickerCategory.delegate = self
     }
     
     func alertMe(message:String) -> Void {
@@ -36,6 +47,22 @@ class AddNewsViewController: UIViewController {
             self.performSegue(withIdentifier: "segueBackFromAddNews", sender: self)
         }))
         self.present(alertOn, animated: true, completion: nil)
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return arrCategory.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return arrCategory[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 50
     }
     /*
     // MARK: - Navigation
