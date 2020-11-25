@@ -34,18 +34,31 @@ class SignUpViewController: UIViewController {
         validate()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destin = segue.destination as! tabBarViewController
+
+        if (segue.identifier == "toTabBarController"){
+            destin.receivedName = name
+        }
+    }
+    
     
     
     
     //validasi email dibenerin lagi ya:
     //1. contains @
     //2. can't have @.
+    //Okay
     
     let name_less3 = UIAlertController(title: "Alert", message: "Name must be more than 3 characters", preferredStyle: .alert)
     
     let emptyFields = UIAlertController(title: "All field must be filled", message: "Please fill all the field to continue", preferredStyle: .alert)
     
     let emailDotcom = UIAlertController(title: "Invalid email", message: "email must be ended with .com", preferredStyle: .alert)
+    
+    let noET = UIAlertController(title: "Invalid email", message: "email must contains @", preferredStyle: .alert)
+    
+    let EtDot = UIAlertController(title: "Invalid email", message: "email can't have @.", preferredStyle: .alert)
     
     let Confirmpass = UIAlertController(title: "Invalid password", message: "make sure the password you have entered is the same", preferredStyle: .alert)
     
@@ -73,6 +86,17 @@ class SignUpViewController: UIViewController {
             //name must be more than 3 characters
             name_less3.addAction(OKAY)
             present(name_less3, animated: true, completion: nil)
+        }
+        
+        else if !((email?.contains("@"))!){
+            //email must contains @
+            noET.addAction(OKAY)
+            present(noET, animated: true, completion: nil)
+        }
+        
+        else if (email!.contains("@.")){
+            EtDot.addAction(OKAY)
+            present(EtDot, animated: true, completion: nil)
         }
             
         else if !((email?.hasSuffix(".com"))!){

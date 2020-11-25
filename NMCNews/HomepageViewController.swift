@@ -11,6 +11,8 @@ var arrDummy = [News]()
 class HomepageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableViewNews: UITableView!
     
+    var receivedName:String?
+    
     @IBAction func unwind(_ sender:UIStoryboardSegue) {
         
     }

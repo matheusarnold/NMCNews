@@ -13,6 +13,8 @@
 		2FF5C4CD25625B7B00590523 /* NMCNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FF5C4CB25625B7B00590523 /* NMCNews.xcdatamodeld */; };
 		2FF5C4CF25625B7C00590523 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FF5C4CE25625B7C00590523 /* Assets.xcassets */; };
 		2FF5C4D225625B7C00590523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FF5C4D025625B7C00590523 /* LaunchScreen.storyboard */; };
+		4A61CE2C256E0571008F5813 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61CE2B256E0571008F5813 /* ProfileViewController.swift */; };
+		4A61CE33256E26E8008F5813 /* tabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61CE32256E26E8008F5813 /* tabBarViewController.swift */; };
 		C32BCFA725669808006C98D3 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BCFA625669808006C98D3 /* NewsItem.swift */; };
 		C360EA5625669CCC004EDB58 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C360EA5525669CCC004EDB58 /* NewsTableViewCell.swift */; };
 		C369DD3B25638ED700CEF5A2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369DD3A25638ED700CEF5A2 /* SignUpViewController.swift */; };
@@ -30,6 +32,8 @@
 		2FF5C4CE25625B7C00590523 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FF5C4D125625B7C00590523 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FF5C4D325625B7C00590523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A61CE2B256E0571008F5813 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4A61CE32256E26E8008F5813 /* tabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarViewController.swift; sourceTree = "<group>"; };
 		C32BCFA625669808006C98D3 /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
 		C360EA5525669CCC004EDB58 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		C369DD3A25638ED700CEF5A2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 				C32BCFA625669808006C98D3 /* NewsItem.swift */,
 				C360EA5525669CCC004EDB58 /* NewsTableViewCell.swift */,
 				C3F0B8902566CAAB00093E60 /* NewsDetailViewController.swift */,
+				4A61CE2B256E0571008F5813 /* ProfileViewController.swift */,
+				4A61CE32256E26E8008F5813 /* tabBarViewController.swift */,
 			);
 			path = NMCNews;
 			sourceTree = "<group>";
@@ -158,8 +164,10 @@
 			files = (
 				2FF5C4CD25625B7B00590523 /* NMCNews.xcdatamodeld in Sources */,
 				C32BCFA725669808006C98D3 /* NewsItem.swift in Sources */,
+				4A61CE2C256E0571008F5813 /* ProfileViewController.swift in Sources */,
 				C360EA5625669CCC004EDB58 /* NewsTableViewCell.swift in Sources */,
 				2FF5C4C725625B7B00590523 /* ViewController.swift in Sources */,
+				4A61CE33256E26E8008F5813 /* tabBarViewController.swift in Sources */,
 				C369DD3B25638ED700CEF5A2 /* SignUpViewController.swift in Sources */,
 				2FF5C4C525625B7B00590523 /* AppDelegate.swift in Sources */,
 				C3F0B8912566CAAB00093E60 /* NewsDetailViewController.swift in Sources */,
