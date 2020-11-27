@@ -35,11 +35,10 @@ class SignUpViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destin = segue.destination as! tabBarViewController
-
-        if (segue.identifier == "toTabBarController"){
-            destin.receivedName = name
-        }
+        let destin = segue.destination as! UITabBarController
+        let res = destin.viewControllers!.last as! ProfileViewController
+        
+        res.Myname = name
     }
     
     

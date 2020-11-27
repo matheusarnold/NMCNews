@@ -22,7 +22,7 @@ class ProfileViewController: UIViewController {
         profilePic.layer.cornerRadius = profilePic.frame.size.width/2
         profilePic.clipsToBounds = true
         
-        
+        name.text = "Hello, \(Myname!)"
         
     }
     

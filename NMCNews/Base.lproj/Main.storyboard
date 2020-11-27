@@ -323,9 +323,11 @@
                                     <constraint firstAttribute="height" constant="200" id="vqf-KT-YPd"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrp-Yj-m7u">
-                                <rect key="frame" x="168" y="300" width="79" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrp-Yj-m7u">
+                                <rect key="frame" x="107" y="300" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ruz-7i-nxS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -334,8 +336,10 @@
                         <viewLayoutGuide key="safeArea" id="Vy0-YJ-95e"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="hrp-Yj-m7u" firstAttribute="top" secondItem="Llu-yd-bGB" secondAttribute="bottom" constant="30" id="1sV-aT-xh1"/>
                             <constraint firstItem="Llu-yd-bGB" firstAttribute="centerX" secondItem="RMH-Mc-g4Y" secondAttribute="centerX" id="Eqf-l4-dKB"/>
                             <constraint firstItem="Llu-yd-bGB" firstAttribute="top" secondItem="Vy0-YJ-95e" secondAttribute="top" constant="70" id="Yo4-dq-qYW"/>
+                            <constraint firstItem="hrp-Yj-m7u" firstAttribute="centerX" secondItem="Llu-yd-bGB" secondAttribute="centerX" id="dLC-y0-314"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="cVz-uV-kIE"/>
@@ -346,7 +350,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UnB-Kd-2jm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2756" y="-400.74962518740631"/>
+            <point key="canvasLocation" x="2755.072463768116" y="-401.11607142857139"/>
         </scene>
         <!--Home-->
         <scene sceneID="Dvp-wW-hcT">
