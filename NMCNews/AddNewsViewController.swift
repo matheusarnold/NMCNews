@@ -8,14 +8,41 @@
 
 import UIKit
 
+
+    var arrDummy = [News]()
+
+
+
 class AddNewsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    var vartitle:String?
+    var varcontent:String?
+    var varcategory:String?
+    var vardate:String?
+    
+    
     var arrCategory = ["Entertainment", "Politic", "Sport", "Finance", "Automotive"]
+    
+    
+    @IBOutlet weak var inputitle: UITextField!
+    @IBOutlet weak var inputcontent: UITextView!
+    
+    
+    
     
     @IBOutlet weak var pickerCategory: UIPickerView!
     @IBAction func btnBack(_ sender: Any) {
         alertMe(message: "Save to draft before leaving?")
     }
+    
+    //data yg dari inputitle & inputcontent gabisa masuk, why
+    func getTF(){
+        vartitle = inputitle.text!
+        varcontent = inputcontent.text!
+        varcategory = "contoh category"
+        vardate = "contohdate"
+    }
+    
     
     @IBAction func btnSelectCategory(_ sender: UIButton) {
         pickerCategory.isHidden = false
@@ -27,6 +54,8 @@ class AddNewsViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         pickerCategory.isHidden = true
         pickerCategory.dataSource = self
         pickerCategory.delegate = self
+        
+        getTF()
     }
     
     func alertMe(message:String) -> Void {
@@ -64,14 +93,10 @@ class AddNewsViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return 50
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    
+    
 
 }
+
+

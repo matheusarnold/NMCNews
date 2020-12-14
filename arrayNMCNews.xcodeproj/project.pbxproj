@@ -13,18 +13,17 @@
 		2FF5C4CD25625B7B00590523 /* NMCNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FF5C4CB25625B7B00590523 /* NMCNews.xcdatamodeld */; };
 		2FF5C4CF25625B7C00590523 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FF5C4CE25625B7C00590523 /* Assets.xcassets */; };
 		2FF5C4D225625B7C00590523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FF5C4D025625B7C00590523 /* LaunchScreen.storyboard */; };
+		4A5F16392586578900C5303A /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B8902566CAAB00093E60 /* NewsDetailViewController.swift */; };
+		4A617C24258746DF0054D415 /* AddNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369DD422563D96800CEF5A2 /* AddNewsViewController.swift */; };
+		4A617C2825875FAA0054D415 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A617C2725875FAA0054D415 /* BookmarkViewController.swift */; };
 		4A61CE2C256E0571008F5813 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61CE2B256E0571008F5813 /* ProfileViewController.swift */; };
-		4A61CE33256E26E8008F5813 /* tabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61CE32256E26E8008F5813 /* tabBarViewController.swift */; };
-		C32BCFA725669808006C98D3 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BCFA625669808006C98D3 /* NewsItem.swift */; };
+		4A821ADB2586E44900C8B581 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369DD3C25638F0C00CEF5A2 /* HomepageViewController.swift */; };
 		C360EA5625669CCC004EDB58 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C360EA5525669CCC004EDB58 /* NewsTableViewCell.swift */; };
 		C369DD3B25638ED700CEF5A2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369DD3A25638ED700CEF5A2 /* SignUpViewController.swift */; };
-		C369DD3D25638F0C00CEF5A2 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369DD3C25638F0C00CEF5A2 /* HomepageViewController.swift */; };
-		C369DD432563D96800CEF5A2 /* AddNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369DD422563D96800CEF5A2 /* AddNewsViewController.swift */; };
-		C3F0B8912566CAAB00093E60 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B8902566CAAB00093E60 /* NewsDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2FF5C4C125625B7B00590523 /* NMCNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NMCNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FF5C4C125625B7B00590523 /* arrayNMCNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arrayNMCNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FF5C4C425625B7B00590523 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FF5C4C625625B7B00590523 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2FF5C4C925625B7B00590523 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -32,9 +31,8 @@
 		2FF5C4CE25625B7C00590523 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FF5C4D125625B7C00590523 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FF5C4D325625B7C00590523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A617C2725875FAA0054D415 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		4A61CE2B256E0571008F5813 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		4A61CE32256E26E8008F5813 /* tabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarViewController.swift; sourceTree = "<group>"; };
-		C32BCFA625669808006C98D3 /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
 		C360EA5525669CCC004EDB58 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		C369DD3A25638ED700CEF5A2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C369DD3C25638F0C00CEF5A2 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +62,7 @@
 		2FF5C4C225625B7B00590523 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2FF5C4C125625B7B00590523 /* NMCNews.app */,
+				2FF5C4C125625B7B00590523 /* arrayNMCNews.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,11 +80,10 @@
 				C369DD3A25638ED700CEF5A2 /* SignUpViewController.swift */,
 				C369DD3C25638F0C00CEF5A2 /* HomepageViewController.swift */,
 				C369DD422563D96800CEF5A2 /* AddNewsViewController.swift */,
-				C32BCFA625669808006C98D3 /* NewsItem.swift */,
 				C360EA5525669CCC004EDB58 /* NewsTableViewCell.swift */,
 				C3F0B8902566CAAB00093E60 /* NewsDetailViewController.swift */,
 				4A61CE2B256E0571008F5813 /* ProfileViewController.swift */,
-				4A61CE32256E26E8008F5813 /* tabBarViewController.swift */,
+				4A617C2725875FAA0054D415 /* BookmarkViewController.swift */,
 			);
 			path = NMCNews;
 			sourceTree = "<group>";
@@ -94,9 +91,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2FF5C4C025625B7B00590523 /* NMCNews */ = {
+		2FF5C4C025625B7B00590523 /* arrayNMCNews */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2FF5C4D625625B7C00590523 /* Build configuration list for PBXNativeTarget "NMCNews" */;
+			buildConfigurationList = 2FF5C4D625625B7C00590523 /* Build configuration list for PBXNativeTarget "arrayNMCNews" */;
 			buildPhases = (
 				2FF5C4BD25625B7B00590523 /* Sources */,
 				2FF5C4BE25625B7B00590523 /* Frameworks */,
@@ -106,9 +103,9 @@
 			);
 			dependencies = (
 			);
-			name = NMCNews;
+			name = arrayNMCNews;
 			productName = NMCNews;
-			productReference = 2FF5C4C125625B7B00590523 /* NMCNews.app */;
+			productReference = 2FF5C4C125625B7B00590523 /* arrayNMCNews.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -126,7 +123,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2FF5C4BC25625B7B00590523 /* Build configuration list for PBXProject "NMCNews" */;
+			buildConfigurationList = 2FF5C4BC25625B7B00590523 /* Build configuration list for PBXProject "arrayNMCNews" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -139,7 +136,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2FF5C4C025625B7B00590523 /* NMCNews */,
+				2FF5C4C025625B7B00590523 /* arrayNMCNews */,
 			);
 		};
 /* End PBXProject section */
@@ -163,16 +160,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FF5C4CD25625B7B00590523 /* NMCNews.xcdatamodeld in Sources */,
-				C32BCFA725669808006C98D3 /* NewsItem.swift in Sources */,
 				4A61CE2C256E0571008F5813 /* ProfileViewController.swift in Sources */,
 				C360EA5625669CCC004EDB58 /* NewsTableViewCell.swift in Sources */,
 				2FF5C4C725625B7B00590523 /* ViewController.swift in Sources */,
-				4A61CE33256E26E8008F5813 /* tabBarViewController.swift in Sources */,
+				4A617C2825875FAA0054D415 /* BookmarkViewController.swift in Sources */,
 				C369DD3B25638ED700CEF5A2 /* SignUpViewController.swift in Sources */,
+				4A617C24258746DF0054D415 /* AddNewsViewController.swift in Sources */,
 				2FF5C4C525625B7B00590523 /* AppDelegate.swift in Sources */,
-				C3F0B8912566CAAB00093E60 /* NewsDetailViewController.swift in Sources */,
-				C369DD3D25638F0C00CEF5A2 /* HomepageViewController.swift in Sources */,
-				C369DD432563D96800CEF5A2 /* AddNewsViewController.swift in Sources */,
+				4A5F16392586578900C5303A /* NewsDetailViewController.swift in Sources */,
+				4A821ADB2586E44900C8B581 /* HomepageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +320,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Matheus.NMCNews;
+				PRODUCT_BUNDLE_IDENTIFIER = Matheus.arrayNMCNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -341,7 +337,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Matheus.NMCNews;
+				PRODUCT_BUNDLE_IDENTIFIER = Matheus.arrayNMCNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -351,7 +347,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2FF5C4BC25625B7B00590523 /* Build configuration list for PBXProject "NMCNews" */ = {
+		2FF5C4BC25625B7B00590523 /* Build configuration list for PBXProject "arrayNMCNews" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2FF5C4D425625B7C00590523 /* Debug */,
@@ -360,7 +356,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2FF5C4D625625B7C00590523 /* Build configuration list for PBXNativeTarget "NMCNews" */ = {
+		2FF5C4D625625B7C00590523 /* Build configuration list for PBXNativeTarget "arrayNMCNews" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2FF5C4D725625B7C00590523 /* Debug */,

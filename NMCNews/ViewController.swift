@@ -50,6 +50,14 @@ class ViewController: UIViewController {
             performSegue(withIdentifier: "segueToNews", sender: self)
         }
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destin = segue.destination as! UITabBarController
+        let res = destin.viewControllers!.last as! ProfileViewController
+        
+        res.Myname = email
+    }
 }
 
 

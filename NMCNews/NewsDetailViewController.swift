@@ -15,19 +15,23 @@ class NewsDetailViewController: UIViewController {
     @IBOutlet weak var imgViewHolder: UIImageView!
     @IBOutlet weak var txtContent: UITextView!
     
+    var detailTitle:String?
+    var detailCategory:String?
+    var detailContent:String?
+    var detailDate:String?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        let category = arrDummy[0].category
-        let title = arrDummy[0].title
-        let date = arrDummy[0].date
-        let content = arrDummy[0].content
-        
-        lblKategori.text = category
-        lblJudul.text = title
-        lblInfo.text = date + "    " + "Saya Surreal"
-        txtContent.text = content
+        initial()
+     
+    }
+    
+    func initial(){
+        lblJudul.text = detailTitle
+        txtContent.text = detailContent
+        lblInfo.text = detailDate
+        lblKategori.text = detailCategory
     }
     
 
