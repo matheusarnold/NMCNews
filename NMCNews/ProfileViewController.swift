@@ -16,9 +16,13 @@ class ProfileViewController: UIViewController {
     
     var Myname:String?
     
+    @IBAction func unwindToProfile (_ sender: UIStoryboardSegue) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(arrDummy.count)
         profilePic.layer.cornerRadius = profilePic.frame.size.width/2
         profilePic.clipsToBounds = true
         

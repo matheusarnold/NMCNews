@@ -20,6 +20,7 @@
 		4A821ADB2586E44900C8B581 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369DD3C25638F0C00CEF5A2 /* HomepageViewController.swift */; };
 		C360EA5625669CCC004EDB58 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C360EA5525669CCC004EDB58 /* NewsTableViewCell.swift */; };
 		C369DD3B25638ED700CEF5A2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369DD3A25638ED700CEF5A2 /* SignUpViewController.swift */; };
+		C3760D502587895F00C1181F /* BookmarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3760D4F2587895F00C1181F /* BookmarkTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		C369DD3A25638ED700CEF5A2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C369DD3C25638F0C00CEF5A2 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		C369DD422563D96800CEF5A2 /* AddNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewsViewController.swift; sourceTree = "<group>"; };
+		C3760D4F2587895F00C1181F /* BookmarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTableViewCell.swift; sourceTree = "<group>"; };
 		C3F0B8902566CAAB00093E60 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				C3F0B8902566CAAB00093E60 /* NewsDetailViewController.swift */,
 				4A61CE2B256E0571008F5813 /* ProfileViewController.swift */,
 				4A617C2725875FAA0054D415 /* BookmarkViewController.swift */,
+				C3760D4F2587895F00C1181F /* BookmarkTableViewCell.swift */,
 			);
 			path = NMCNews;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				4A61CE2C256E0571008F5813 /* ProfileViewController.swift in Sources */,
 				C360EA5625669CCC004EDB58 /* NewsTableViewCell.swift in Sources */,
 				2FF5C4C725625B7B00590523 /* ViewController.swift in Sources */,
+				C3760D502587895F00C1181F /* BookmarkTableViewCell.swift in Sources */,
 				4A617C2825875FAA0054D415 /* BookmarkViewController.swift in Sources */,
 				C369DD3B25638ED700CEF5A2 /* SignUpViewController.swift in Sources */,
 				4A617C24258746DF0054D415 /* AddNewsViewController.swift in Sources */,

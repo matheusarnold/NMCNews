@@ -39,6 +39,8 @@ class HomepageViewController: UIViewController, UITableViewDataSource, UITableVi
         initial()
         tableViewNews.dataSource = self
         tableViewNews.delegate = self
+        tableViewNews.reloadData()
+        print(arrDummy.count)
     }
     
     func initial(){
@@ -81,7 +83,7 @@ class HomepageViewController: UIViewController, UITableViewDataSource, UITableVi
         
     }
     
-    
+    /*
     //get data from addnews
     @IBAction func unwindToHome(_ unwindSegue: UIStoryboardSegue) {
         let Addpage = unwindSegue.source as! AddNewsViewController
@@ -97,5 +99,5 @@ class HomepageViewController: UIViewController, UITableViewDataSource, UITableVi
         tableViewNews.reloadData()
         
     }
-    
+    */
 }
