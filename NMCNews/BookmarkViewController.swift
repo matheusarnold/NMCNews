@@ -11,7 +11,7 @@ import UIKit
 class BookmarkViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var bookmarkTableView: UITableView!
     override func viewDidLoad() {
-        print(arrDummy.count)
+        //print(arrayDummy.count)
         bookmarkTableView.dataSource = self
         bookmarkTableView.delegate = self
         bookmarkTableView.reloadData()
@@ -21,14 +21,14 @@ class BookmarkViewController: UIViewController, UITableViewDataSource, UITableVi
         return 120
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrDummy.count
+        return arrayDummy.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "bookmarkCell") as! BookmarkTableViewCell
-        cell.bookmarkNewsTitle.text = arrDummy[0].title
-        cell.bookmarkNewsDate.text = arrDummy[0].date
-        cell.bookmarkNewsCategory.text = arrDummy[0].category
+        cell.bookmarkNewsTitle.text = arrayDummy[0].title
+        cell.bookmarkNewsDate.text = arrayDummy[0].date
+        cell.bookmarkNewsCategory.text = arrayDummy[0].category
         return cell
     }
     

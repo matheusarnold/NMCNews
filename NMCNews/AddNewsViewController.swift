@@ -9,7 +9,7 @@
 import UIKit
 
 
-    var arrDummy = [News]()
+    //var arrayDummy = [NewsItemz]()
 
 
 
@@ -26,9 +26,6 @@ class AddNewsViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     @IBOutlet weak var inputitle: UITextField!
     @IBOutlet weak var inputcontent: UITextView!
-    
-    
-    
     
     @IBOutlet weak var pickerCategory: UIPickerView!
     @IBAction func btnBack(_ sender: Any) {

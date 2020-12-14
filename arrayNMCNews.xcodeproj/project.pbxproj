@@ -21,6 +21,7 @@
 		C360EA5625669CCC004EDB58 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C360EA5525669CCC004EDB58 /* NewsTableViewCell.swift */; };
 		C369DD3B25638ED700CEF5A2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369DD3A25638ED700CEF5A2 /* SignUpViewController.swift */; };
 		C3760D502587895F00C1181F /* BookmarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3760D4F2587895F00C1181F /* BookmarkTableViewCell.swift */; };
+		C3760D6D2587C90800C1181F /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3760D6C2587C90800C1181F /* NewsItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		C369DD3C25638F0C00CEF5A2 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		C369DD422563D96800CEF5A2 /* AddNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewsViewController.swift; sourceTree = "<group>"; };
 		C3760D4F2587895F00C1181F /* BookmarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTableViewCell.swift; sourceTree = "<group>"; };
+		C3760D6C2587C90800C1181F /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
 		C3F0B8902566CAAB00093E60 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 				4A61CE2B256E0571008F5813 /* ProfileViewController.swift */,
 				4A617C2725875FAA0054D415 /* BookmarkViewController.swift */,
 				C3760D4F2587895F00C1181F /* BookmarkTableViewCell.swift */,
+				C3760D6C2587C90800C1181F /* NewsItem.swift */,
 			);
 			path = NMCNews;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FF5C4CD25625B7B00590523 /* NMCNews.xcdatamodeld in Sources */,
+				C3760D6D2587C90800C1181F /* NewsItem.swift in Sources */,
 				4A61CE2C256E0571008F5813 /* ProfileViewController.swift in Sources */,
 				C360EA5625669CCC004EDB58 /* NewsTableViewCell.swift in Sources */,
 				2FF5C4C725625B7B00590523 /* ViewController.swift in Sources */,

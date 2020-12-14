@@ -7,14 +7,13 @@
 //
 
 import UIKit
-
+var email:String?
 class ViewController: UIViewController {
     
     
     @IBOutlet weak var LogEmail: UITextField!
     @IBOutlet weak var LogPassword: UITextField!
     
-    var email:String?
     var password:String?
     
     override func viewDidLoad() {
@@ -52,12 +51,12 @@ class ViewController: UIViewController {
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destin = segue.destination as! UITabBarController
         let res = destin.viewControllers!.last as! ProfileViewController
         
         res.Myname = email
-    }
+    }*/
 }
 
 
