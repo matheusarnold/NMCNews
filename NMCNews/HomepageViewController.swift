@@ -64,6 +64,7 @@ class HomepageViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.newsCategory.text = arrayDummy[indexPath.row].category
         cell.newsTitle.text = arrayDummy[indexPath.row].title
         cell.newsDate.text = arrayDummy[indexPath.row].date
+        cell.imgHolder.image = UIImage(named: arrayDummy[indexPath.row].img)
         return cell
     }
     
@@ -80,6 +81,8 @@ class HomepageViewController: UIViewController, UITableViewDataSource, UITableVi
             desti.detailCategory = arrayDummy[myIndex].category
             desti.detailContent = arrayDummy[myIndex].content
             desti.detailDate = arrayDummy[myIndex].date
+            desti.detailAuthor = arrayDummy[myIndex].author
+            desti.detailInfo = arrayDummy[myIndex].img
         }
         
     }

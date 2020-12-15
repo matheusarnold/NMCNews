@@ -12,37 +12,39 @@ import UIKit
     //var arrayDummy = [NewsItemz]()
 
 
-
 class AddNewsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    var vartitle:String?
-    var varcontent:String?
-    var varcategory:String?
-    var vardate:String?
-    
-    
+    var selected:Int? = -1
     var arrCategory = ["Entertainment", "Politic", "Sport", "Finance", "Automotive"]
-    
     
     @IBOutlet weak var inputitle: UITextField!
     @IBOutlet weak var inputcontent: UITextView!
     
     @IBOutlet weak var pickerCategory: UIPickerView!
     @IBAction func btnBack(_ sender: Any) {
-        alertMe(message: "Save to draft before leaving?")
     }
     
-    //data yg dari inputitle & inputcontent gabisa masuk, why
-    func getTF(){
-        vartitle = inputitle.text!
-        varcontent = inputcontent.text!
-        varcategory = "contoh category"
-        vardate = "contohdate"
+    @IBAction func btnPublish(_ sender: UIBarButtonItem) {
+        let insTitle:String
+        let insContent:String?
+        let insCategory:String?
+        let insDate:String?
+        
+        //get date
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMMM yyyy"
+        insDate = formatter.string(from: date)
+        
+        //get the field
+        insTitle = inputitle.text!
+        insContent = inputcontent.text!
+        insCategory = arrCategory[selected!]
+        print(insDate)
     }
-    
-    
     @IBAction func btnSelectCategory(_ sender: UIButton) {
         pickerCategory.isHidden = false
+        selected = 0
     }
     
     override func viewDidLoad() {
@@ -51,28 +53,11 @@ class AddNewsViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         pickerCategory.isHidden = true
         pickerCategory.dataSource = self
         pickerCategory.delegate = self
+        let color:UIColor = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.0)
+        inputcontent.layer.borderWidth = 0.5
+        inputcontent.layer.borderColor = color.cgColor
+        inputcontent.layer.cornerRadius = 5.0
         
-        getTF()
-    }
-    
-    func alertMe(message:String) -> Void {
-        let alertOn = UIAlertController(title: "Save to Draft", message: message, preferredStyle: .alert)
-        alertOn.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.destructive, handler: {action in
-            self.performSegue(withIdentifier: "segueBackFromAddNews", sender: self)
-        }))
-        alertOn.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: {action in
-            //save data here
-            self.notificationAlert(message: "Data saved to draft!")
-        }))
-        self.present(alertOn, animated: true, completion: nil)
-    }
-    
-    func notificationAlert(message:String) -> Void {
-        let alertOn = UIAlertController(title: "Save Success", message: message, preferredStyle: .alert)
-        alertOn.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {action in
-            self.performSegue(withIdentifier: "segueBackFromAddNews", sender: self)
-        }))
-        self.present(alertOn, animated: true, completion: nil)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -91,8 +76,10 @@ class AddNewsViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         return 50
     }
     
-    
-    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selected = row
+    }
+
 
 }
 

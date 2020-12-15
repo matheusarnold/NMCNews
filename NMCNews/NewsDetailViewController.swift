@@ -19,7 +19,9 @@ class NewsDetailViewController: UIViewController {
     var detailCategory:String?
     var detailContent:String?
     var detailDate:String?
-    
+    var detailAuthor:String?
+    var detailInfo:String?
+    var detailMeta:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +30,12 @@ class NewsDetailViewController: UIViewController {
     }
     
     func initial(){
+        detailMeta = "\(detailDate!) - \(detailAuthor!)"
         lblJudul.text = detailTitle
         txtContent.text = detailContent
-        lblInfo.text = detailDate
+        lblInfo.text = detailMeta
         lblKategori.text = detailCategory
+        imgViewHolder.image = UIImage(named: detailInfo as! String)
     }
     
 
