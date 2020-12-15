@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="PublishedNews" representedClassName=".PublishedNews" syncable="YES">
+        <attribute name="newsAuthor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="newsCategory" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="newsContent" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="newsDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="newsImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="newsDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="newsTitle" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PublishedNews" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="PublishedNews" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>
