@@ -8,9 +8,7 @@
 
 import UIKit
 
-
-    //var arrayDummy = [NewsItemz]()
-
+var arrDraftDummy = [NewsItemz]()
 
 class AddNewsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -21,8 +19,9 @@ class AddNewsViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     @IBOutlet weak var inputcontent: UITextView!
     
     @IBOutlet weak var pickerCategory: UIPickerView!
-    @IBAction func btnBack(_ sender: Any) {
-    }
+    
+    @IBAction func btnBack(_ sender: UIBarButtonItem) {
+        alertMe(message: "Do you want to save news before leaving?")    }
     
     @IBAction func btnPublish(_ sender: UIBarButtonItem) {
         let insTitle:String
@@ -58,6 +57,40 @@ class AddNewsViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         inputcontent.layer.borderColor = color.cgColor
         inputcontent.layer.cornerRadius = 5.0
         
+    }
+    
+    func alertMe(message:String) -> Void {
+        let alertOn = UIAlertController(title: "Save to Draft?", message: message, preferredStyle: .alert)
+        alertOn.addAction(UIAlertAction(title: "No", style: .destructive, handler: {action in
+            self.performSegue(withIdentifier: "backToHome", sender: self)
+        }))
+        alertOn.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: {action in
+            self.saveNewsToDraft()
+            print("Saved to Draft!")
+            self.performSegue(withIdentifier: "backToHome", sender: self)
+        }))
+        
+        self.present(alertOn, animated: true, completion: nil)
+    }
+    
+    func saveNewsToDraft() {
+        let insTitle:String
+        let insContent:String?
+        let insCategory:String?
+        let insDate:String?
+        
+        //get date
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMMM yyyy"
+        insDate = formatter.string(from: date)
+        
+        //get the field
+        insTitle = inputitle.text!
+        insContent = inputcontent.text!
+        insCategory = arrCategory[selected!]
+        var newsId = "\(arrDraftDummy.count + 1)"
+        arrDraftDummy.append(NewsItemz(category: insCategory!, title: insTitle, date: insDate!, content: insContent!, newsId: newsId, img: "Lab_Logo", author: "U0001", status: "drafted"))
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -16,4 +16,5 @@ struct NewsItemz {
     var newsId:String
     var img:String
     var author:String
+    var status:String
 }

@@ -14,19 +14,17 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var name: UILabel!
     
-    var Myname:String?
-    
     @IBAction func unwindToProfile (_ sender: UIStoryboardSegue) {
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(arrayDummy.count)
         profilePic.layer.cornerRadius = profilePic.frame.size.width/2
         profilePic.clipsToBounds = true
-        
-        name.text = "Hello, \(Myname!)"
+        let defaults = UserDefaults.standard
+        let currName = defaults.string(forKey: "currUserName")
+        name.text = "Hello, \(currName!)"
         
     }
     

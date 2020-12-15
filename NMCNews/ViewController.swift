@@ -7,35 +7,78 @@
 //
 
 import UIKit
-var email:String?
+import CoreData
+
+var currentUserName:String = ""
+
 class ViewController: UIViewController {
     
     
     @IBOutlet weak var LogEmail: UITextField!
     @IBOutlet weak var LogPassword: UITextField!
     
-    var password:String?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let defaults = UserDefaults.standard
+        checkSettings()
+        //clearData()
     }
     
     let noEmail = UIAlertController(title: "All field must be filled", message: "Please input your email", preferredStyle: .alert)
     
     let noPassword = UIAlertController(title: "All field must be filled", message: "Please input your password", preferredStyle: .alert)
     
-    let okay = UIAlertAction(title: "ok", style: .default, handler: nil)
+    let unregistered = UIAlertController(title: "Data not registered", message: "Please sign up first or enter correct email and/or password", preferredStyle: .alert)
+    
+    let okay = UIAlertAction(title: "OK", style: .default, handler: nil)
     
     
     @IBAction func btnLogin(_ sender: Any) {
-        email = LogEmail.text
-        password = LogPassword.text
+        let email = LogEmail.text!
+        let password = LogPassword.text!
         
-        validate()
+        validateField(email: email, password: password)
     }
     
-    func validate() {
+    func clearData() {
+        let defaults = UserDefaults.standard
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchReq = NSFetchRequest<User>(entityName: "User")
+        do {
+            arrUserDummy = try context.fetch(fetchReq)
+        }
+        catch let error {
+            print(error.localizedDescription)
+        }
+        let toDelete = arrUserDummy[0]
+        do {
+            context.delete(toDelete)
+            try context.save()
+            
+        }
+        catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func checkSettings() {
+        let defaults = UserDefaults.standard
+        let isLogged = defaults.bool(forKey: "isLoggedIn")
+        
+        defaults.synchronize()
+        navigationController?.isNavigationBarHidden = true
+        if(isLogged) {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let initVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarViewController")
+            appDelegate.window?.rootViewController = initVC
+            appDelegate.window?.makeKeyAndVisible()
+        }
+    }
+    
+    func validateField(email:String, password:String) {
         if (email == ""){
             noEmail.addAction(okay)
             present(noEmail, animated: true, completion: nil)
@@ -46,17 +89,41 @@ class ViewController: UIViewController {
         }
         
         else{
-            performSegue(withIdentifier: "segueToNews", sender: self)
+            let isUserExist = validateInDB(txtEmail: email, txtPassword: password)
+            if(isUserExist) {
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let initVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarViewController")
+                appDelegate.window?.rootViewController = initVC
+                appDelegate.window?.makeKeyAndVisible()
+            }
+            else {
+                unregistered.addAction(okay)
+                present(unregistered, animated: true, completion: nil)            }
         }
     }
     
-    
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destin = segue.destination as! UITabBarController
-        let res = destin.viewControllers!.last as! ProfileViewController
+    func validateInDB(txtEmail:String, txtPassword:String) -> Bool {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
         
-        res.Myname = email
-    }*/
+        let fetchReq = NSFetchRequest<User>(entityName: "User")
+        do {
+            arrUserDummy = try context.fetch(fetchReq)
+        }
+        catch let error {
+            print(error.localizedDescription)
+        }
+        for result in arrUserDummy {
+            if(txtEmail == result.userEmail && txtPassword == result.userPassword) {
+                let defaults = UserDefaults.standard
+                defaults.set(result.userName, forKey: "currUserName")
+                return true
+            }
+        }
+        
+        return false
+    }
+
 }
 
 
