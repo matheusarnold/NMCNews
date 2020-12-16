@@ -144,6 +144,7 @@ class SignUpViewController: UIViewController {
                 let defaults = UserDefaults.standard
                 defaults.set(true, forKey: "isLoggedIn")
                 defaults.set(name!, forKey: "currUserName")
+                defaults.set(userId, forKey: "currUserId")
             }
             catch let error {
                 print(error.localizedDescription)

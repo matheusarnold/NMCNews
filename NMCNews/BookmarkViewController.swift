@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+var arrBookmark = [BookmarkedNews]()
 class BookmarkViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var bookmarkTableView: UITableView!
     override func viewDidLoad() {
@@ -21,14 +21,15 @@ class BookmarkViewController: UIViewController, UITableViewDataSource, UITableVi
         return 120
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayDummy.count
+        return arrBookmark.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "bookmarkCell") as! BookmarkTableViewCell
-        cell.bookmarkNewsTitle.text = arrayDummy[0].title
-        cell.bookmarkNewsDate.text = arrayDummy[0].date
-        cell.bookmarkNewsCategory.text = arrayDummy[0].category
+        cell.bookmarkNewsTitle.text = arrBookmark[indexPath.row].bookmarkNewsTitle
+        cell.bookmarkNewsDate.text = arrBookmark[indexPath.row].bookmarkNewsDate
+        cell.bookmarkNewsCategory.text = arrBookmark[indexPath.row].bookmarkNewsCategory
+        cell.bookmarkImgHolder.image = UIImage(named: arrBookmark[indexPath.row].bookmarkNewsImage!)
         return cell
     }
     

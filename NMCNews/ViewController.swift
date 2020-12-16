@@ -25,6 +25,10 @@ class ViewController: UIViewController {
         //clearData()
     }
     
+    @IBAction func unwindLoggedOut(_ sender:UIStoryboardSegue) {
+        
+    }
+    
     let noEmail = UIAlertController(title: "All field must be filled", message: "Please input your email", preferredStyle: .alert)
     
     let noPassword = UIAlertController(title: "All field must be filled", message: "Please input your password", preferredStyle: .alert)
@@ -91,6 +95,9 @@ class ViewController: UIViewController {
         else{
             let isUserExist = validateInDB(txtEmail: email, txtPassword: password)
             if(isUserExist) {
+                let defaults = UserDefaults.standard
+                defaults.set(currentUserName, forKey: "currUserName")
+                defaults.set(true, forKey: "isLoggedIn")
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 let initVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarViewController")
                 appDelegate.window?.rootViewController = initVC
@@ -115,8 +122,10 @@ class ViewController: UIViewController {
         }
         for result in arrUserDummy {
             if(txtEmail == result.userEmail && txtPassword == result.userPassword) {
+                currentUserName = result.userName!
                 let defaults = UserDefaults.standard
                 defaults.set(result.userName, forKey: "currUserName")
+                defaults.set(result.userId, forKey: "currUserId")
                 return true
             }
         }

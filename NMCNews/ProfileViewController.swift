@@ -8,11 +8,21 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
-    
-    
+class ProfileViewController: UIViewController{
+   
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var name: UILabel!
+    
+    @IBAction func btnLogout(_ sender: UIButton) {
+        let defaults = UserDefaults.standard
+        defaults.set(false, forKey: "isLoggedIn")
+        defaults.synchronize()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let initVC = self.storyboard?.instantiateViewController(withIdentifier: "SignInViewController")
+        appDelegate.window?.rootViewController = initVC
+        appDelegate.window?.makeKeyAndVisible()
+        
+    }
     
     @IBAction func unwindToProfile (_ sender: UIStoryboardSegue) {
         
@@ -25,18 +35,6 @@ class ProfileViewController: UIViewController {
         let defaults = UserDefaults.standard
         let currName = defaults.string(forKey: "currUserName")
         name.text = "Hello, \(currName!)"
-        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

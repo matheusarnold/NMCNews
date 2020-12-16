@@ -31,6 +31,10 @@
 		C3A337AE2588FF1200D7418F /* BookmarkedNews+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A337A62588FF1200D7418F /* BookmarkedNews+CoreDataProperties.swift */; };
 		C3A337AF2588FF1200D7418F /* DraftedNews+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A337A72588FF1200D7418F /* DraftedNews+CoreDataClass.swift */; };
 		C3A337B02588FF1200D7418F /* DraftedNews+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A337A82588FF1200D7418F /* DraftedNews+CoreDataProperties.swift */; };
+		C3F88FA5258A1507007636BB /* MyDraftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F88FA4258A1507007636BB /* MyDraftViewController.swift */; };
+		C3F88FA7258A1F5E007636BB /* DraftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F88FA6258A1F5E007636BB /* DraftTableViewCell.swift */; };
+		C3F88FA9258A5651007636BB /* MyNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F88FA8258A5651007636BB /* MyNewsTableViewCell.swift */; };
+		C3F88FAB258A5735007636BB /* MyNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F88FAA258A5735007636BB /* MyNewsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,10 @@
 		C3A337A72588FF1200D7418F /* DraftedNews+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DraftedNews+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C3A337A82588FF1200D7418F /* DraftedNews+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DraftedNews+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C3F0B8902566CAAB00093E60 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		C3F88FA4258A1507007636BB /* MyDraftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDraftViewController.swift; sourceTree = "<group>"; };
+		C3F88FA6258A1F5E007636BB /* DraftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftTableViewCell.swift; sourceTree = "<group>"; };
+		C3F88FA8258A5651007636BB /* MyNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNewsTableViewCell.swift; sourceTree = "<group>"; };
+		C3F88FAA258A5735007636BB /* MyNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNewsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,10 @@
 				C3760D4F2587895F00C1181F /* BookmarkTableViewCell.swift */,
 				C3760D6C2587C90800C1181F /* NewsItem.swift */,
 				C3A3378D2588BEEE00D7418F /* User.swift */,
+				C3F88FA4258A1507007636BB /* MyDraftViewController.swift */,
+				C3F88FA6258A1F5E007636BB /* DraftTableViewCell.swift */,
+				C3F88FA8258A5651007636BB /* MyNewsTableViewCell.swift */,
+				C3F88FAA258A5735007636BB /* MyNewsViewController.swift */,
 			);
 			path = NMCNews;
 			sourceTree = "<group>";
@@ -194,10 +206,14 @@
 			files = (
 				C3A3378E2588BEEE00D7418F /* User.swift in Sources */,
 				C3A337AF2588FF1200D7418F /* DraftedNews+CoreDataClass.swift in Sources */,
+				C3F88FA9258A5651007636BB /* MyNewsTableViewCell.swift in Sources */,
 				2FF5C4CD25625B7B00590523 /* NMCNews.xcdatamodeld in Sources */,
 				C3760D6D2587C90800C1181F /* NewsItem.swift in Sources */,
+				C3F88FA7258A1F5E007636BB /* DraftTableViewCell.swift in Sources */,
 				4A61CE2C256E0571008F5813 /* ProfileViewController.swift in Sources */,
+				C3F88FAB258A5735007636BB /* MyNewsViewController.swift in Sources */,
 				C360EA5625669CCC004EDB58 /* NewsTableViewCell.swift in Sources */,
+				C3F88FA5258A1507007636BB /* MyDraftViewController.swift in Sources */,
 				2FF5C4C725625B7B00590523 /* ViewController.swift in Sources */,
 				C3A337B02588FF1200D7418F /* DraftedNews+CoreDataProperties.swift in Sources */,
 				C3A337A92588FF1200D7418F /* User+CoreDataClass.swift in Sources */,
