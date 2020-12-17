@@ -33,12 +33,16 @@ class HomepageViewController: UIViewController, UITableViewDataSource, UITableVi
         reloadMyNews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        reloadMyNews()
+    }
+    
     func reloadMyNews() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let fetchReq = NSFetchRequest<PublishedNews>(entityName: "PublishedNews")
         do {
-            arrMyNews = try context.fetch(fetchReq)
+            arrayDummy = try context.fetch(fetchReq)
         }
         catch let error {
             print(error.localizedDescription)
@@ -73,12 +77,32 @@ class HomepageViewController: UIViewController, UITableViewDataSource, UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetail" {
             let desti = segue.destination as! NewsDetailViewController
+            var authorName = ""
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let fetchReq = NSFetchRequest<User>(entityName: "User")
+            fetchReq.predicate = NSPredicate(format: "userId like %@", arrayDummy[myIndex].newsAuthor!)
+            do {
+                let res = try context.fetch(fetchReq)
+                print("size is \(res.count)")
+                if(res.count == 0) {
+                    authorName = "Admin"
+                }
+                else {
+                    authorName = res[0].userName!
+                }
+            }
+            catch let error {
+                print(error.localizedDescription)
+            }
             desti.detailTitle = arrayDummy[myIndex].newsTitle
             desti.detailCategory = arrayDummy[myIndex].newsCategory
             desti.detailContent = arrayDummy[myIndex].newsContent
             desti.detailDate = arrayDummy[myIndex].newsDate
-            desti.detailAuthor = arrayDummy[myIndex].newsAuthor
+            desti.detailAuthor = authorName
             desti.detailInfo = arrayDummy[myIndex].newsImage
+            desti.detailAuthorId = arrayDummy[myIndex].newsAuthor
+            desti.detailNewsId = arrayDummy[myIndex].newsId
         }
         
     }

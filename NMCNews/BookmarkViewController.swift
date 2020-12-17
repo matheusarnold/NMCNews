@@ -7,14 +7,43 @@
 //
 
 import UIKit
+import CoreData
+
 var arrBookmark = [BookmarkedNews]()
+
 class BookmarkViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+    var index = -1
+    
     @IBOutlet weak var bookmarkTableView: UITableView!
     override func viewDidLoad() {
-        //print(arrayDummy.count)
         bookmarkTableView.dataSource = self
         bookmarkTableView.delegate = self
         bookmarkTableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        reloadBookmark()
+    }
+    
+    func reloadBookmark() {
+        let defaults = UserDefaults.standard
+        let keyUser = "\(defaults.integer(forKey: "currUserId"))"
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchReq = NSFetchRequest<BookmarkedNews>(entityName: "BookmarkedNews")
+        fetchReq.predicate = NSPredicate(format: "bookmarkNewsStatus like %@", keyUser)
+        do {
+            arrBookmark = try context.fetch(fetchReq)
+        }
+        catch let error {
+            print(error.localizedDescription)
+        }
+        bookmarkTableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        index = indexPath.row
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

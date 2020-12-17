@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class NewsDetailViewController: UIViewController {
     @IBOutlet weak var lblKategori: UILabel!
@@ -14,6 +15,8 @@ class NewsDetailViewController: UIViewController {
     @IBOutlet weak var lblInfo: UILabel!
     @IBOutlet weak var imgViewHolder: UIImageView!
     @IBOutlet weak var txtContent: UITextView!
+    @IBOutlet weak var btnBM: UIBarButtonItem!
+    
     
     var detailTitle:String?
     var detailCategory:String?
@@ -22,12 +25,82 @@ class NewsDetailViewController: UIViewController {
     var detailAuthor:String?
     var detailInfo:String?
     var detailMeta:String?
+    var detailAuthorId:String?
+    var detailNewsId:String?
+    
+    @IBAction func btnAddBookmark(_ sender: UIBarButtonItem) {
+        if(btnBM.title == "Add to Bookmark") {
+            let defaults = UserDefaults.standard
+            let keyUser = "\(defaults.integer(forKey: "currUserId"))"
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            
+            let bmNews = BookmarkedNews(context: context)
+            bmNews.bookmarkNewsAuthor = detailAuthorId!
+            bmNews.bookmarkNewsCategory = detailCategory!
+            bmNews.bookmarkNewsContent = detailContent!
+            bmNews.bookmarkNewsDate = detailDate!
+            bmNews.bookmarkNewsId = detailNewsId!
+            bmNews.bookmarkNewsImage = detailInfo!
+            bmNews.bookmarkNewsStatus = keyUser
+            bmNews.bookmarkNewsTitle = detailTitle!
+            do {
+                context.insert(bmNews)
+                try context.save()
+                btnBM.title = "Remove from Bookmark"
+            }
+            catch let error {
+                print(error.localizedDescription)
+            }
+        }
+        else {
+            let defaults = UserDefaults.standard
+            let keyUser = "\(defaults.integer(forKey: "currUserId"))"
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let fetchReq = NSFetchRequest<BookmarkedNews>(entityName: "BookmarkedNews")
+            fetchReq.predicate = NSPredicate(format: "bookmarkNewsId like %@ AND bookmarkNewsStatus like %@", detailNewsId!, keyUser)
+            do {
+                let res = try context.fetch(fetchReq)
+                context.delete(res[0])
+                try context.save()
+                btnBM.title = "Add to Bookmark"
+            }
+            catch let error {
+                print(error.localizedDescription)
+            }        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initial()
+        checkBookmarked()
      
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        checkBookmarked()
+    }
+    
+    func checkBookmarked() {
+        let defaults = UserDefaults.standard
+        let keyUser = "\(defaults.integer(forKey: "currUserId"))"
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchReq = NSFetchRequest<BookmarkedNews>(entityName: "BookmarkedNews")
+        fetchReq.predicate = NSPredicate(format: "bookmarkNewsId like %@ AND bookmarkNewsStatus like %@", detailNewsId!, keyUser)
+        do {
+            let res = try context.fetch(fetchReq)
+            for result in res {
+                if(result.bookmarkNewsId == detailNewsId && result.bookmarkNewsStatus == keyUser) {
+                    btnBM.title = "Remove from Bookmark"
+                    break
+                }
+            }
+        }
+        catch let error {
+            print(error.localizedDescription)
+        }    }
     
     func initial(){
         detailMeta = "\(detailDate!) - \(detailAuthor!)"
@@ -35,18 +108,7 @@ class NewsDetailViewController: UIViewController {
         txtContent.text = detailContent
         lblInfo.text = detailMeta
         lblKategori.text = detailCategory
-        imgViewHolder.image = UIImage(named: detailInfo as! String)
+        imgViewHolder.image = UIImage(named: detailInfo!)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -11,7 +11,7 @@ import CoreData
 
 var arrMyNews = [PublishedNews]()
 class MyNewsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+    var myNewsIndex = -1
     
     @IBOutlet weak var tableMyNews: UITableView!
     
@@ -39,6 +39,12 @@ class MyNewsViewController: UIViewController, UITableViewDataSource, UITableView
         tableMyNews.reloadData()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myNewsIndex = indexPath.row
+        print("\(myNewsIndex)")
+        performSegue(withIdentifier: "toNewsDetail1", sender: self)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
@@ -54,4 +60,37 @@ class MyNewsViewController: UIViewController, UITableViewDataSource, UITableView
         cell.myNewsTitle.text = arrMyNews[indexPath.row].newsTitle
         cell.myNewsImage.image = UIImage(named: arrMyNews[indexPath.row].newsImage!)
         return cell
-    }}
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "toNewsDetail1") {
+            let desti = segue.destination as! NewsDetailViewController
+            var authorName = ""
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let fetchReq = NSFetchRequest<User>(entityName: "User")
+            fetchReq.predicate = NSPredicate(format: "userId like %@", arrMyNews[myNewsIndex].newsAuthor!)
+            do {
+                let res = try context.fetch(fetchReq)
+                print("size is \(res.count)")
+                if(res.count == 0) {
+                    authorName = "Admin"
+                }
+                else {
+                    authorName = res[0].userName!
+                }
+            }
+            catch let error {
+                print(error.localizedDescription)
+            }
+            desti.detailTitle = arrMyNews[myNewsIndex].newsTitle
+            desti.detailCategory = arrMyNews[myNewsIndex].newsCategory
+            desti.detailContent = arrMyNews[myNewsIndex].newsContent
+            desti.detailDate = arrMyNews[myNewsIndex].newsDate
+            desti.detailAuthor = authorName
+            desti.detailInfo = arrMyNews[myNewsIndex].newsImage
+            desti.detailAuthorId = arrMyNews[myNewsIndex].newsAuthor
+            desti.detailNewsId = arrMyNews[myNewsIndex].newsId        }
+    }
+    
+}

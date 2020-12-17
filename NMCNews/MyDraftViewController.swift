@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 
-var editStatus = 0
 var getDraftIndex:Int = -1
 
 class MyDraftViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -24,6 +23,10 @@ class MyDraftViewController: UIViewController, UITableViewDataSource, UITableVie
         tableDraft.dataSource = self
         tableDraft.delegate = self
         reloadDraft()    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        reloadDraft()
+    }
     
     func reloadDraft() {
         let defaults = UserDefaults.standard
@@ -61,20 +64,12 @@ class MyDraftViewController: UIViewController, UITableViewDataSource, UITableVie
             catch let error {
                 print(error.localizedDescription)
             }
+            reloadDraft()
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        editStatus = 1
         getDraftIndex = indexPath.row
-        var categoryIndex = -1
-        for i in 0..<arrCategory.count {
-            if(arrDraftDummy[getDraftIndex].draftNewsCategory == arrCategory[i]) {
-                categoryIndex = i
-                break
-            }
-        }
-        selected = categoryIndex
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
