@@ -10,6 +10,9 @@ import UIKit
 import CoreData
 
 var arrMyNews = [PublishedNews]()
+var isRootNewsDeleted = 0
+var newsIndexToDelete = ""
+
 class MyNewsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var myNewsIndex = -1
     
@@ -43,6 +46,29 @@ class MyNewsViewController: UIViewController, UITableViewDataSource, UITableView
         myNewsIndex = indexPath.row
         print("\(myNewsIndex)")
         performSegue(withIdentifier: "toNewsDetail1", sender: self)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if(editingStyle == .delete) {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let newsToDelete = arrMyNews[indexPath.row]
+            isRootNewsDeleted = 1
+            newsIndexToDelete = arrMyNews[indexPath.row].newsId!
+            do {
+                context.delete(newsToDelete)
+                try context.save()
+            }
+            catch let error {
+                print(error.localizedDescription)
+            }
+            
+            reloadMyNews()
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

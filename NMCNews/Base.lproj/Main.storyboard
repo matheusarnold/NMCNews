@@ -58,7 +58,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qr0-OF-d7A">
                                 <rect key="frame" x="20" y="540" width="374" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Don't have an account?"/>
+                                <state key="normal" title="Don't have an account?">
+                                    <color key="titleColor" red="0.87843137250000003" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="Px9-v0-IQW" kind="show" id="9ee-OZ-R2p"/>
                                 </connections>
@@ -131,7 +133,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJ3-vU-CSQ">
                                 <rect key="frame" x="30" y="119" width="131" height="43"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.87843137250000003" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egg-T6-Gae">
@@ -235,11 +237,13 @@
                                 <items>
                                     <navigationItem title="Add News" id="64O-Po-QLD">
                                         <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="Cjs-UW-gEs">
+                                            <color key="tintColor" red="0.87843137250000003" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="btnBack:" destination="Vd5-lu-hkF" id="7bZ-H1-15X"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Publish" style="plain" id="gDW-re-jLy">
+                                            <color key="tintColor" red="0.87843137250000003" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="btnPublish:" destination="Vd5-lu-hkF" id="DOf-iC-7lP"/>
                                             </connections>
@@ -449,11 +453,13 @@
                                 <items>
                                     <navigationItem title="Edit News" id="wzi-9G-Odp">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="Fow-83-Xm5">
+                                            <color key="tintColor" red="0.87843137250000003" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="btnBack:" destination="7RK-2F-Fne" id="59G-w0-v6t"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Publish" id="7cj-Gh-FTu">
+                                            <color key="tintColor" red="0.87843137250000003" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="btnPublish:" destination="7RK-2F-Fne" id="v39-hY-MkJ"/>
                                             </connections>
@@ -508,6 +514,7 @@
                                 <items>
                                     <navigationItem title="My Draft" id="TT6-PT-Gqq">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="O7E-R6-gpq">
+                                            <color key="tintColor" red="0.87843137250000003" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="dmo-EO-xCR" kind="unwind" unwindAction="unwindToProfile:" id="faZ-he-008"/>
                                             </connections>
@@ -597,6 +604,7 @@
                                 <items>
                                     <navigationItem title="My News" id="vfJ-0a-9yk">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="1c9-2A-GHW">
+                                            <color key="tintColor" red="0.87843137250000003" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="DIO-xf-u8C" kind="unwind" unwindAction="unwindToProfile:" id="qWz-pJ-8AK"/>
                                             </connections>
@@ -682,7 +690,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xTt-0g-ZeR">
-                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="120" id="dWl-xN-G3w" customClass="NewsTableViewCell" customModule="arrayNMCNews" customModuleProvider="target">
@@ -733,6 +741,7 @@
                                     <navigationItem title="Latest News" id="K3r-uB-Tv8">
                                         <barButtonItem key="backBarButtonItem" title="Back" id="YqL-5O-XgE"/>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="C7l-92-K5z">
+                                            <color key="tintColor" red="0.87843137250000003" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="Vd5-lu-hkF" kind="show" id="KVV-ci-Yhw"/>
                                             </connections>
@@ -740,22 +749,15 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Iu0-XT-cOk">
-                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xTt-0g-ZeR" firstAttribute="trailing" secondItem="pFu-eF-ojK" secondAttribute="trailing" id="2Jb-M7-rJW"/>
-                            <constraint firstItem="xTt-0g-ZeR" firstAttribute="top" secondItem="Iu0-XT-cOk" secondAttribute="bottom" id="3hp-Fn-tun"/>
-                            <constraint firstItem="Iu0-XT-cOk" firstAttribute="top" secondItem="G97-Wp-TOY" secondAttribute="bottom" id="OAb-HU-eML"/>
                             <constraint firstItem="G97-Wp-TOY" firstAttribute="leading" secondItem="pFu-eF-ojK" secondAttribute="leading" id="OTZ-HY-Wdw"/>
-                            <constraint firstItem="Iu0-XT-cOk" firstAttribute="trailing" secondItem="pFu-eF-ojK" secondAttribute="trailing" id="XJ1-Mu-OPa"/>
                             <constraint firstItem="G97-Wp-TOY" firstAttribute="top" secondItem="pFu-eF-ojK" secondAttribute="top" id="cdE-gj-H00"/>
-                            <constraint firstItem="Iu0-XT-cOk" firstAttribute="leading" secondItem="pFu-eF-ojK" secondAttribute="leading" id="fEa-xO-ULM"/>
                             <constraint firstItem="xTt-0g-ZeR" firstAttribute="bottom" secondItem="pFu-eF-ojK" secondAttribute="bottom" id="nc9-Gy-wow"/>
                             <constraint firstItem="G97-Wp-TOY" firstAttribute="trailing" secondItem="pFu-eF-ojK" secondAttribute="trailing" id="obh-ae-3MP"/>
+                            <constraint firstItem="xTt-0g-ZeR" firstAttribute="top" secondItem="G97-Wp-TOY" secondAttribute="bottom" id="yhA-nl-NDW"/>
                             <constraint firstItem="xTt-0g-ZeR" firstAttribute="leading" secondItem="pFu-eF-ojK" secondAttribute="leading" id="zHo-y3-Qfy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pFu-eF-ojK"/>
@@ -803,11 +805,13 @@
                                 <items>
                                     <navigationItem id="dyq-0Y-c8T">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="sgI-dC-kPk">
+                                            <color key="tintColor" red="0.87843137250000003" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="M7w-0B-uGJ" kind="unwind" unwindAction="unwind:" id="fzA-Mn-dqR"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Add to Bookmark" id="O6T-Fs-LwB">
+                                            <color key="tintColor" red="0.87843137250000003" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="btnAddBookmark:" destination="y2v-gP-f11" id="PY1-dv-jGj"/>
                                             </connections>
@@ -947,6 +951,7 @@
                                 <items>
                                     <navigationItem title="My Bookmark" id="4uZ-9J-X8d">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="Kfj-Kn-aL9">
+                                            <color key="tintColor" red="0.87843137250000003" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="RNE-ax-Imy" kind="unwind" unwindAction="unwindToProfile:" id="H8X-Gi-DNT"/>
                                             </connections>
@@ -1004,10 +1009,10 @@
         <image name="profilePic" width="640" height="640"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NtS-IZ-UcZ"/>
-        <segue reference="qoe-kd-gip"/>
+        <segue reference="QhL-wR-XRP"/>
+        <segue reference="ICC-5N-iQV"/>
         <segue reference="GxK-kA-gVt"/>
-        <segue reference="BbS-kx-1nc"/>
+        <segue reference="tck-3U-kVs"/>
         <segue reference="CwT-PU-ohW"/>
     </inferredMetricsTieBreakers>
 </document>
